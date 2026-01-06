@@ -1,95 +1,134 @@
-project:
-  name: Fighter Jet Simulation - Machine Learning Analysis
-  version: 1.0.0
-  domain: Aerospace Engineering + Applied Machine Learning
-  description: >
-    End-to-end machine learning analysis on custom fighter jet
-    simulation data generated from SolidWorks, focusing on
-    performance prediction and model error comparison.
+FIGHTER JET SIMULATION – MACHINE LEARNING ANALYSIS
+Overview
 
-data:
-  source: SolidWorks simulation output
-  type: Custom engineering simulation dataset
-  format: CSV
-  location: data/fighter_jet_simulation_data.csv
-  characteristics:
-    - simulation_generated
-    - non_public
-    - physics_informed
-    - contains_noise
+This repository contains an end-to-end machine learning workflow built on custom fighter jet simulation data generated from a SolidWorks model.
 
-features:
-  input_parameters:
-    - wing_span
-    - wing_area
-    - angle_of_attack
-    - air_density
-    - velocity
-    - pressure
-  target_variables:
-    - lift
-    - drag
-    - efficiency
+The project focuses on analyzing engineering-grade simulation outputs and applying data science and machine learning techniques to understand performance behavior and compare predictive models using error-based evaluation.
 
-preprocessing:
-  missing_value_handling: drop_or_impute
-  scaling: standard_scaler
-  feature_selection: domain_knowledge_based
-  outlier_handling: visual_and_statistical
+Unlike most ML projects that rely on publicly available or pre-processed datasets, this work is based on a custom dataset derived from an actual engineering simulation, making the pipeline closer to real-world industry use cases.
 
-models:
-  type: regression
-  algorithms:
-    - linear_regression
-    - polynomial_regression
-    - ridge_regression
-    - lasso_regression
+Project Objective
 
-training:
-  train_test_split:
-    test_size: 0.2
-    random_state: 42
-  cross_validation:
-    enabled: false
+The primary objectives of this project are:
 
-evaluation:
-  metrics:
-    - MAE
-    - MSE
-    - RMSE
-  model_comparison: true
+• Analyze fighter jet simulation data generated from CAD-based simulation
+• Understand relationships between design parameters and performance metrics
+• Build and train machine learning models on custom simulation data
+• Compare model performance using standard error metrics
+• Demonstrate integration of core engineering data with applied ML workflows
 
-visualization:
-  enabled: true
-  plots:
-    - feature_correlation_matrix
-    - prediction_vs_actual
-    - error_distribution
+Data Source
 
-environment:
-  language: Python
-  version: "3.10"
-  libraries:
-    numpy: latest
-    pandas: latest
-    matplotlib: latest
-    seaborn: latest
-    scikit-learn: latest
+The dataset used in this project was generated from a fighter jet model designed and simulated in SolidWorks.
 
-execution:
-  notebook: notebooks/FighterJet_Simulation_Data_Model.ipynb
-  results_path: results/
-  save_metrics: true
+Key characteristics of the data:
+• Custom-generated (not public or pre-saved)
+• Derived from engineering simulation outputs
+• Contains design parameters and corresponding performance metrics
+• Includes realistic noise and non-idealities common in real engineering data
 
-collaboration:
-  workflow: simulation_to_ml
-  roles:
-    - simulation_and_design
-    - data_analysis_and_modeling
+Workflow
 
-future_scope:
-  - advanced_regression_models
-  - simulation_ml_feedback_loop
-  - scalable_pipeline_design
+The overall workflow followed in this project is:
 
+Fighter jet design and simulation in SolidWorks
 
+Extraction of raw simulation data
+
+Data cleaning and structuring
+
+Exploratory Data Analysis (EDA)
+
+Feature engineering based on domain understanding
+
+Machine learning model training
+
+Model evaluation and error comparison
+
+Insight generation
+
+This structured pipeline ensures traceability from engineering design to ML-based insights.
+
+Methods and Approach
+
+The machine learning approach emphasizes understanding and evaluation rather than blind optimization.
+
+Key steps include:
+• Handling missing and inconsistent simulation outputs
+• Visual analysis to identify trends and parameter sensitivity
+• Feature selection guided by aerodynamic intuition
+• Training multiple regression-based ML models
+• Comparing models using error metrics instead of relying only on accuracy
+
+Model Evaluation
+
+Models are evaluated using standard regression error metrics, including:
+
+• Mean Absolute Error (MAE)
+• Mean Squared Error (MSE)
+• Root Mean Squared Error (RMSE)
+
+These metrics help assess prediction quality, robustness, and error distribution across models.
+
+Tech Stack
+
+Language:
+• Python
+
+Libraries:
+• NumPy
+• Pandas
+• Matplotlib
+• Seaborn
+• Scikit-learn
+
+Tools:
+• Jupyter Notebook / Google Colab
+
+Repository Structure
+
+Typical repository structure:
+
+data/
+└── fighter_jet_simulation_data.csv
+
+notebooks/
+└── FighterJet_Simulation_Data_Model.ipynb
+
+results/
+└── model_error_comparison.csv
+
+README.txt
+
+Why This Project Matters
+
+Most beginner and intermediate ML projects use clean, pre-curated datasets.
+
+This project stands out because:
+• Data originates from real engineering simulation
+• Assumptions are realistic
+• Noise and imperfections are present
+• Validation requires both ML and engineering intuition
+
+The workflow mirrors how ML is applied in engineering and industrial environments rather than academic exercises.
+
+Collaboration
+
+This project was developed in collaboration with a teammate responsible for the fighter jet design and simulation work.
+
+The machine learning pipeline, data analysis, and model evaluation were implemented as part of this repository.
+
+Future Scope
+
+This repository represents an initial stage of a broader engineering–AI effort.
+
+The pipeline is designed to be extendable toward:
+• More complex models
+• Deeper coupling with simulation outputs
+• Tighter integration between design and prediction
+
+Further details are intentionally kept minimal at this stage.
+
+Contact
+
+If you are interested in applied machine learning, simulation-driven datasets, or AI applications in core engineering domains, feel free to connect.
